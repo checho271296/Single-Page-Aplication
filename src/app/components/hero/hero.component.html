@@ -1,0 +1,21 @@
+<h1 class="mt-5 animated fadeIn">{{hero.nombre| uppercase}} <small>({{hero.aparicion | date : 'y'}})</small></h1>
+<hr>
+
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-4">
+        <img class="img-thumbnail" src="{{hero.img}}">
+        <br><br>
+        <a class="btn btn-outline-danger btn-block" routerLink="/heros">Comeback to Heros</a>
+    </div>
+    <div class="col-md-8">
+
+        <h3>{{hero.nombre}}</h3>
+        <hr>
+        <p>{{hero.bio}}</p>
+        <div>
+            <img class="img-thumbnail" src="assets/images/{{hero.casa}}.png" style="width: 120px; height: 120px;">
+
+        </div>
+    </div>
+</div>
