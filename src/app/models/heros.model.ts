@@ -4,4 +4,5 @@ export interface Heros{
     img:  String ;
     aparicion: String ;
     casa: String ;
+    idx?: number;
 }

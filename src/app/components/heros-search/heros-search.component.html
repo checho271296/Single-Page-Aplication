@@ -10,5 +10,5 @@
 </div>
 
 <div class="card-columns">
-    <app-card-hero [hero]="hero" [i]="i" *ngFor="let hero of heros ; let i = index"></app-card-hero>
+    <app-card-hero (selectedHero)="seeHeros($event)" [hero]="hero" [i]="hero.idx" *ngFor="let hero of heros ; let i = index"></app-card-hero>
 </div>

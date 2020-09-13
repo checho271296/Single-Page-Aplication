@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Heros } from '../../models/heros.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HerosService } from '../../services/heros.service';
 
 @Component({
@@ -11,10 +11,11 @@ import { HerosService } from '../../services/heros.service';
 export class HerosSearchComponent implements OnInit {
 
   
+
   heros :  Heros[]= [];
   term : string;
   
-  constructor(private activatedRoute:ActivatedRoute, private herosService :HerosService) { }
+  constructor(private activatedRoute:ActivatedRoute, private herosService :HerosService, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params
@@ -24,6 +25,9 @@ export class HerosSearchComponent implements OnInit {
       })
   }
 
+  seeHeros(idx:number){
+    this.router.navigate(['hero',idx])
+  }
 
 
 }

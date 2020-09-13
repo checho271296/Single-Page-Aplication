@@ -66,9 +66,11 @@ export class HerosService {
   searchHeros(term: string): Heros[]{
     let herosArr : Heros[] = [];
     term = term.toLowerCase();
-    for (let hero of this.heros){
+    for (let i= 0; i< this.heros.length; i++){
+      let hero = this.heros[i]
       let name = hero.nombre.toLowerCase();
       if(name.indexOf(term) >= 0){
+        hero.idx = i;
         herosArr.push(hero);
       }
     }
