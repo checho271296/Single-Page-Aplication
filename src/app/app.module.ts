@@ -10,6 +10,8 @@ import { HerosComponent } from './components/heros/heros.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { HerosSearchComponent } from './components/heros-search/heros-search.component';
 import { CardHeroComponent } from './components/card-hero/card-hero.component';
+import {APP_BASE_HREF} from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { CardHeroComponent } from './components/card-hero/card-hero.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
